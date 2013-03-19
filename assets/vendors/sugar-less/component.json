@@ -1,0 +1,17 @@
+{
+  "name": "sugar-less",
+  "version": "0.0.0",
+  "description": "Simple utilities for less",
+  "dependencies": {
+    "normalize-css": null
+  },
+  "gitHead": "08594c88728c120246a2f050ede2c376a147fff5",
+  "readme": "# Sugar.less\n\nversion 0.9.0\n\n\n## これはなに\n\nLess用のミックスイン・ユーティリティクラス群です。  \n[normalize.css](http://necolas.github.com/normalize.css)と[Twitter Bootstrap](http://twitter.github.com/bootstrap/)を部分的に取り入れています。\n\n## 使い方\n\nLess環境で*less/sugar.less*を読み込んで使いたい機能を使用するだけです。\n\n例えば次のコードではユーティリティミックスインをレイアウトに活用しています。\n\n```\n@import \"less/sugar\";\n\n#container {\n\t.clearfix();\n\twidth: 960px;\n\n\t#main {\n\t\t.left();\n\t\twidth: 800px;\n\t}\n\t#sub {\n\t\t.right();\n\t\twidth: 960px - 800px - 20px;\n\t}\n}\n```\n\n*less/sugar.less*では、Sugar.lessの全てのコンポーネントがインポートされています。\n必要な物だけをインポートするには、*less/sugar/* 以下のlessファイルを直接インポートします。\n\n例えば、共有ユーティリティのみを使用する場合は次のようになります。\n\n```\n@import \"less/sugar/utils\";\n```\n\n## 共有ユーティリティと、その他のコンポーネント\n\n*less/utils.less* にある共有のミックスインはベーシックなミックスインです。\n\n```\n.box {\n\t.size(100px, 80px); // 100*80のサイズ指定をする\n}\n```\n\nその他のコンポーネント（fonts, grid, css3, gradient)については、less.jsの名前空間を活用しています。\n\ncs) [LESS | Namespace](http://lesscss.org/#-namespaces)\n\n```\nbody {\n\t#fonts > .sans(); // 和文のゴシック体を指定\n}\nh1 {\n\t#fonts > .en > .sans(); // 欧文のゴシック体を指定\n}\n```\n\n## 構成ファイル/ドキュメント\n\n\n### less/\n\n- sugar.less : less/sugar/* を全てインポートします。\n\n\n### less/sugar/\n\n- normalize.less : via [normalize.css](http://necolas.github.com/normalize.css/)\n- [utils.less](./docs/utils.md) : 共有のユーティリティミックスイン・クラス群\n- [fonts.less](./docs/fonts.md) : フォント定義\n- [grid.less](./docs/grid.md) : シンプルなグリッドシステム\n- [css3.less](./docs/css3.md) : CSS3プロパティのミックスイン \n- [gradient.less](./docs/gradient.md) : グラデーション用ミックスイン \n\n\n## 作者\n\nmach3\n\n- [Blog](http://blog.mach3.jp)\n- [Website](http://www.mach3.jp)\n- [Twitter](http://twitter.com/mach3ss)\n\n\n",
+  "readmeFilename": "README.md",
+  "_id": "sugar-less@0.9.0",
+  "commit": "08594c88728c120246a2f050ede2c376a147fff5",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mach3/sugar.less"
+  }
+}
