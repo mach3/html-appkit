@@ -3,8 +3,9 @@
  * --------------
  * Copyright (C) 2013 Matsukaze.
  *
- * @version 1.0.0
+ * @version {{version}}
  * @author mach3
  * @require head.js <http://headjs.com>
  *
  */
+ 

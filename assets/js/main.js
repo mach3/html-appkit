@@ -1,2 +1,2 @@
-headRequire(
+head.require(
 );

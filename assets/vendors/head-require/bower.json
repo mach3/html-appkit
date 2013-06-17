@@ -1,0 +1,17 @@
+{
+  "name": "head-require",
+  "version": "0.0.0",
+  "dependencies": {
+    "headjs": "*"
+  },
+  "gitHead": "53999b838b4f4d45b00eaa182676333092ba269e",
+  "readme": "\n# HeadRequire.js\n\nExtension for head.js to use resource loader like require.js\n\n## Feature\n\n- Set main.js in script element's data-main attribute\n- Use `headRequire()` to load resources\n- Grunt task to compile them to a file\n\n\n## Basic Usage\n\n### Resource Loader\n\n```html\n<script src=\"scripts/head.js\"></script>\n<script src=\"scripts/head-require.js\" data-main=\"scripts/main.js\"></script>\n```\n\"scripts/main.js\" like this : \n\n```javascript\nheadRequire(\n\t\"the/path/to/foojs\",\n\t\"the/path/to/bar.js\",\n\t\"the/path/to/baz.js\"\n\t\"the/path/to/initialize.js\"\n);\n```\n\n&raquo; [Learn more about head-require.js](doc/head-require.md)\n\n### Grunt Task to Compile\n\nExample :\n\n```javascript\ngrunt.initConfig({\n\theadRequire : {\n\t\tdist : {\n\t\t\toptions : {},\n\t\t\tfiles : { \"the/path/to/dest.js\" : \"the/path/to/main.js\" }\n\t\t}\n\t}\n});\n```\n\n&raquo; [Learn more about Grunt task](doc/grunt-task.md)\n\n### CHANGE LOG\n\n&raquo; [Change Log](doc/changelog.md)\n\n-----\n\n## Author\n\nmach3\n\n- [Website](http://www.mach3.jp)\n- [Blog](http://blog.mach3.jp)\n- [Twitter](http://twitter.com/mach3ss)\n",
+  "readmeFilename": "README.md",
+  "_id": "head-require@1.2.1",
+  "description": "Extension for head.js to use resource loader like require.js",
+  "commit": "53999b838b4f4d45b00eaa182676333092ba269e",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mach3/head-require.git"
+  }
+}

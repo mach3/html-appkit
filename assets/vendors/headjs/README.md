@@ -1,6 +1,8 @@
-![Head JS](http://headjs.com/media/img/headjs.gif)
+![Head JS](http://headjs.com/site/assets/img/logo-big.png)
 
 This project was never announced. `git push` and it was all viral.
+
+[![Build Status](https://travis-ci.org/headjs/headjs.png?branch=master)](https://travis-ci.org/headjs/headjs)
 
 ##About
   * _Load scripts and css on demand_

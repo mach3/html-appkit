@@ -1,0 +1,12 @@
+{
+	"name" : "",
+	"version" : "0.0.0",
+	"dependencies" : {
+		"head-require" : "*",
+		"jquery" : "*",
+		"sugar-less" : "*",
+		"backbone" : "*",
+		"underscore" : "*",
+		"es5-shim" : "*"
+	}
+}

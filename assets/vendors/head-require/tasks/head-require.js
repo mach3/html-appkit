@@ -1,54 +1,69 @@
 /**
  * head-require.js as a grunt task
  * -------------------------------
- *
- * @example
- * grunt.initConfig({
- *    headRequire : {
- *	      dist : {
- *	          "the/path/to/dest.js" : "the/path/to/main.js"
- *	      }
- *    }
- *  }) 
- *
+ */
+
+/*
+
+@example 
+
+grunt.initConfig({
+	headRequire : {
+		dist : {
+			options : {
+				uglify : true,
+				banner : ""
+			},
+			files : {
+				"the/path/to/dest.js" : "the/path/to/main.js"
+			}
+		}
+	}
+});
+
  */
 
 module.exports = function(grunt){
 
-	grunt.registerMultiTask("headRequire", "HeadRequire.js's compiler", function(){
+ 	grunt.registerMultiTask("headRequire", "head-require.js's compiler", function(){
 
-		var data, name, files, source, getFiles, loadSource;
+ 		var my = {
 
-		data = this.data;
+ 			uglify : require("uglify-js"),
+ 			hrc : require("../lib/head-require"),
+ 			options : this.options({
+ 				uglify : false,
+ 				banner : ""
+ 			}),
 
-		getFiles = function(name){
-			var path, m, files;
+ 			init : function(files){
+ 				var banner;
 
-			path = name.replace(/[^\/]*?$/, "");
-			m = grunt.file.read(name).match(/headRequire\(([\s\S]+?)\)/);
-			if(m){
-				files = JSON.parse("[" + m[1] + "]").map(function(value){
-					return path + value;
-				});
-				return files;
-			}
-			return [];
-		};
+ 				banner = grunt.template.process(my.options.banner);
+ 				grunt.util._.forEach(files, function(src, dest){
+ 					var content;
 
-		loadSource = function(files){
-			var source = "";
+ 					try {
+	 					content = my.hrc.compile(src);
+ 						grunt.file.write(dest, content);
 
-			files.forEach(function(name, index){
-				source += grunt.file.read(name);
-			});
-			return source;
-		};
+	 					if(my.options.uglify){
+	 						content = my.uglify.minify(dest).code;
+	 						grunt.file.write(dest, content);
+	 					}
+	 					if(banner){
+	 						content = banner + content;
+	 						grunt.file.write(dest, content);
+	 					}
+	 					grunt.log.writeln("Compiled : " + dest + " < " + src);
 
-		for(name in data){
-			files = getFiles(data[name]);
-			source = loadSource(files);
-			grunt.file.write(name, source);
-		}
-	});
+ 					} catch(e){
+ 						grunt.log.error(e.message);
+ 					}
+ 				});
+ 			}
+ 		};
 
+ 		my.init(this.data.files);
+ 	});
 };
