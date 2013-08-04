@@ -1,13 +1,12 @@
 {
-	"name" : "",
-	"version" : "0.0.0",
-	"dependencies" : {
-		"grunt-contrib-watch" : "*",
-		"grunt-contrib-uglify" : "*",
-		"grunt-contrib-concat" : "*",
-		"grunt-easy-less" : "*",
-		"grunt-chain-shell" : "*",
-		"head-require" : "*",
-		"modullatte" : "*"
+	"name": "html-appkit",
+	"version": "0.0.0",
+	"devDependencies": {
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-easy-less": "*",
+		"grunt-chain-shell": "*",
+		"head-require": "*",
+		"modullatte": "*"
 	}
 }

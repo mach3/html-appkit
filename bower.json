@@ -1,12 +1,13 @@
 {
-	"name" : "",
-	"version" : "0.0.0",
-	"dependencies" : {
-		"head-require" : "*",
-		"jquery" : "*",
-		"sugar-less" : "*",
-		"backbone" : "*",
-		"underscore" : "*",
-		"es5-shim" : "*"
+	"name": "html-appkit",
+	"version": "0.0.0",
+	"devDependencies": {
+		"headjs": "*",
+		"head-require": "*",
+		"jquery": "1",
+		"sugar-less": "*",
+		"backbone": "*",
+		"underscore": "*",
+		"es5-shim": "*"
 	}
 }
